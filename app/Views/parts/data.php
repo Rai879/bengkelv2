@@ -13,10 +13,10 @@
         <table class="table table-striped">
             <thead>
                 <tr>
+                    <th>Icon</th>
                     <th>Nama</th>
                     <th>Price</th>
                     <th>Suite</th>
-                    <th>Icon</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -26,10 +26,10 @@
                 foreach ($parts as $row):
                 ?>
                     <tr>
+                        <td><img class="img-thumbnail" style="width: 100px;" src="<?= $row['icon'] ?>" alt=""></td>
                         <td><?= $row['namaparts'] ?></td>
                         <td><?= $row['price'] ?></td>
                         <td><?= $row['suite'] ?></td>
-                        <td><img class="img-thumbnail" style="width: 100px;" src="<?= $row['icon'] ?>" alt=""></td>
                         <td>
                             <button type="button" class="btn btn-success"
                             onclick="window.location='/parts/edit/<?= $row['idparts'] ?>'">
