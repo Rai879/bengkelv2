@@ -7,5 +7,5 @@ class partsModel extends Model
 {
     protected $table = 'parts'; // Nama tabel di database
     protected $primaryKey = 'idparts'; // Primary key tabel
-    protected $allowedFields = ['namaparts', 'price', 'suite', 'icon']; // Kolom yang bisa diisi
+    protected $allowedFields = ['namaparts', 'price', 'suite', 'icon', 'quantity']; // Tambahkan 'quantity'
 }

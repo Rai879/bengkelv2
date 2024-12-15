@@ -44,6 +44,13 @@
                 </div>
             </div>
         </div>
+        <div class="row mb-3">
+            <label for="quantity" class="col-sm-2 col-form-label">Quantity</label>
+            <div class="col-sm-10" style="height: 60px;">
+                <input type="number" class="form-control" name="quantity" id="quantity">
+                <div class="invalid-feedback" id="errorQuantity"></div>
+            </div>
+        </div>
         <div class="text-center">
             <button type="submit" id="saveParts" class="btn btn-primary">Submit</button>
         </div>

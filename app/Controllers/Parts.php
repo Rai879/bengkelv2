@@ -32,6 +32,7 @@ class Parts extends BaseController
         $nameparts = $this->request->getPost('nameparts');
         $price = $this->request->getPost('price');
         $suite = $this->request->getPost('suite');
+        $quantity = $this->request->getPost('quantity');
 
         $validation = \Config\Services::validation();
 
@@ -66,6 +67,14 @@ class Parts extends BaseController
                     'is_image' => 'The {field} must be a valid image.',
                 ],
             ],
+            'quantity' => [
+                'label'  => 'Quantity',
+                'rules'  => 'required|integer',
+                'errors' => [
+                    'required' => '{field} Can\'t be Empty',
+                    'integer'  => '{field} Must be a number',
+                ]
+            ],
         ]);
 
         if (!$doValid) {
@@ -75,6 +84,7 @@ class Parts extends BaseController
                     'errorPrice' => $validation->getError('price'),
                     'errorSuite' => $validation->getError('suite'),
                     'errorIconUpload' => $validation->getError('iconUpload'),
+                    'errorQuantity' => $validation->getError('quantity'),
                 ]
             ];
         } else {
@@ -96,7 +106,8 @@ class Parts extends BaseController
                 'namaparts' => $nameparts,
                 'price' => $price,
                 'suite' => $suite,
-                'icon' => $path_image
+                'icon' => $path_image,
+                'quantity' => $quantity
             ]);
 
             $msg = ['success' => 'Parts Successfully Added'];
@@ -140,6 +151,7 @@ class Parts extends BaseController
                 'price' => $row['price'],
                 'suite' => $row['suite'],
                 'icon' => $row['icon'],
+                'quantity' => $row['quantity'],
             ];
             return view('parts/editForm', $data);
         } else {
@@ -153,6 +165,7 @@ class Parts extends BaseController
         $nameparts = $this->request->getPost('nameparts');
         $price = $this->request->getPost('price');
         $suite = $this->request->getPost('suite');
+        $quantity = $this->request->getPost('quantity');
 
         $validation = \Config\Services::validation();
 
@@ -187,6 +200,14 @@ class Parts extends BaseController
                     'is_image' => 'The {field} must be a valid image.',
                 ],
             ],
+            'quantity' => [
+                'label'  => 'Quantity',
+                'rules'  => 'required|integer',
+                'errors' => [
+                    'required' => '{field} Can\'t be Empty',
+                    'integer'  => '{field} Must be a number',
+                ]
+            ],
         ]);
 
         if (!$doValid) {
@@ -196,6 +217,7 @@ class Parts extends BaseController
                     'errorPrice' => $validation->getError('price'),
                     'errorSuite' => $validation->getError('suite'),
                     'errorIconUpload' => $validation->getError('iconUpload'),
+                    'errorQuantity' => $validation->getError('quantity'),
                 ]
             ];
         } else {
@@ -225,7 +247,8 @@ class Parts extends BaseController
                 'namaparts' => $nameparts,
                 'price' => $price,
                 'suite' => $suite,
-                'icon' => $path_image
+                'icon' => $path_image,
+                'quantity' => $quantity
             ]);
 
             $msg = ['success' => 'Parts Successfully Added'];

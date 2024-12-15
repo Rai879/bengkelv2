@@ -80,7 +80,7 @@ if (session_status() == PHP_SESSION_NONE) {
 
                     <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                         <span class="d-none d-md-block dropdown-toggle ps-2">
-                            <?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest' ?>
+                            Selamat Datang <?= isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'Guest' ?>
                         </span>
                     </a><!-- End Profile Iamge Icon -->
 

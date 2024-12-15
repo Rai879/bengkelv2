@@ -17,6 +17,7 @@
                     <th>Nama</th>
                     <th>Price</th>
                     <th>Suite</th>
+                    <th>Quantity</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -30,6 +31,7 @@
                         <td><?= $row['namaparts'] ?></td>
                         <td><?= $row['price'] ?></td>
                         <td><?= $row['suite'] ?></td>
+                        <td><?= $row['quantity'] ?></td>
                         <td>
                             <button type="button" class="btn btn-success"
                             onclick="window.location='/parts/edit/<?= $row['idparts'] ?>'">
