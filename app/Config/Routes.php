@@ -20,3 +20,11 @@ $routes->post('parts/delete', 'Parts::delete');
 $routes->get('parts/edit/(:any)', 'Parts::edit/$1');
 $routes->post('parts/update', 'Parts::updateData');
 
+
+// Users
+$routes->group('users', ['filter' => 'admin'], function($routes) {
+    $routes->get('', 'Users::index');
+    $routes->get('edit/(:num)', 'Users::edit/$1');
+    $routes->post('save', 'Users::save');
+    $routes->get('delete/(:num)', 'Users::delete/$1');
+});

@@ -10,6 +10,11 @@ class Auth extends BaseController
     public function __construct()
     {
         $this->users = new userModel();
+
+        // Cek apakah pengguna sudah login dan levelnya admin
+        if (!session()->get('isLoggedIn') || session()->get('level') !== 'admin') {
+            return redirect()->to('/'); // Redirect ke halaman utama jika bukan admin
+        }
     }
     public function index()
     {
